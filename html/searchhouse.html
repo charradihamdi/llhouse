@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>searchhouse</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="/assets/js/jquery.js"></script>
+    <title>house disponible</title>
+</head>
+<style>
+    body {
+        background-image: url('/assets/imgs/5.jpg');
+        background-position: cover;
+        background-size: cover;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-origin: padding-box;
+    }
+    
+    main {
+        background: rgba(26, 27, 26, 0.3);
+        padding: 30px 30px 30px 30px;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: 60px 60px;
+        width: 600px;
+        margin: 200px auto;
+    }
+    
+    button {
+        margin-top: 10px;
+        border-radius: 5%;
+        width: 100px;
+        background-color: rgb(21, 190, 77);
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
+        color: whitesmoke;
+        background: linear-gradient(90deg, royalblue, lightgreen);
+        margin-left: 220px;
+    }
+    
+    table {
+        border: 1px solid black;
+        width: 520px;
+        height: 90%;
+    }
+    
+    td {
+        border: 1px solid rgb(80, 13, 13);
+        width: 60px;
+        margin: 20px 40px 30px 20px;
+    }
+    
+    article {
+        color: rgb(129, 37, 37);
+        border: 1px solid black;
+    }
+    
+    header {
+        background-color: hsl(240, 100%, 27%, 30%);
+    }
+    
+    a {
+        color: white;
+    }
+    
+    legend {
+        padding-left: 30px;
+    }
+</style>
+
+<body>
+    <div class="container-fluid">
+        <header>
+            <nav class="navbar  navbar-expand-lg navbar-expand-lg navbar-light ">
+                <a class="navbar-brand text-capitalize " href="#">
+                    <i style="color: white;" class="fas fa-home P-2">HOUSE</i>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+                <div class="collapse  navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav  ">
+                        <li class="nav-item active">
+                            <a class="nav-link" style="color: white;" href="./login.html">Log-In <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: white;" href="./addhouses.html">requist</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: white;" href="#">Search</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: white;" href="./index.html">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: white;" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="btn btn-block border rounded-pill p-2 px-3 " href="./index.html">contact</a>
+                        </li>
+
+
+                    </ul>
+
+                </div>
+            </nav>
+        </header>
+    </div>
+    <main>
+        <input class="col-lg-5  " style="margin-left: 150px;" type="text" placeholder="place for loc" required>
+        <button type="button" id="record" class="btn btn-success W-5 p-2 mt-5 mb-5">record</button>
+        <section class="container">
+            <article class="row">
+                <legend class="col-2">id</legend>
+                <legend class="col-3" style="padding-left: 40px;">adresse</legend>
+                <legend class="col-3">phone </legend>
+                <legend class="col-2">price</legend>
+                <legend class="col-2"> rooms</legend>
+            </article>
+            <table id="list">
+                <tr>
+                    <td>hello</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+</body>
+<script>
+    var inp = document.querySelectorAll('input')
+    var db = openDatabase("localhost", "root", "", "lhouse")
+    $("#record").click(function() {
+        $("#list").children().remove();
+        db.transaction(function(transaction) {
+            var sql = `SELECT * FROM home  WHERE adresse='${inp[0].value}' `;
+            transaction.executeSql(sql, undefined, function(transaction, result) {
+                    if (result.rows.length) {
+                        for (var i = 0; i < result.rows.length; i++) {
+                            var row = result.rows.item(i)
+                            var item = row.item;
+                            var adresse = row.adresse;
+                            var price = row.price
+                            var phone = row.phone
+                            var rooms = row.rooms
+                            $("#list").append(`<tr style="width: 500px;color: white;"><td colspa="3" style="width: 80px;"">` + row.id + `</td><td>` + adresse + `</td><td>` + phone + `</td><td>` + price + `</td><td>` + rooms + `</td></tr>`)
+                        }
+                    } else {
+                        $("#list").append(`<><td colspan="3" > no item found</td></>`);
+                    }
+
+
+                },
+                function(transaction, err) {
+                    alert(err.message)
+                })
+        })
+
+    })
+</script>
+
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>house</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+    <script src="./assets/fun.js"></script>
+    <script src="/assets/js/jquery.js"></script>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <header>
+            <nav class="navbar  navbar-expand-lg navbar-expand-lg navbar-light ">
+                <a class="navbar-brand text-capitalize " href="#">
+                    <i class="fas fa-home P-2">HOUSE</i>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+                <div class="collapse  navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav  ">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="./login.html">Log-In <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./addhouses.html">requist</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./searchhouse.html">Search</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#hero">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="btn btn-block border rounded-pill p-2 px-3 " href="#finals">contact</a>
+                        </li>
+
+
+                    </ul>
+
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="container pt-5" style=" background-image: url('/assets/imgs/2.jpg'); background-repeat: no-repeat;;background-size: center;background-position: cover;max-width:100%; height:600px;">
+                <h1 class="row pt-5 d-flex justify-content-center " style="color: darkslategrey;">
+                    Welcome home ! Discover the best vacation homes we offer.</h1>
+                <article class="row pt-5 d-flex justify-content-center " style="padding-bottom: 30px;border: 0px solid black;  background: rgba(122, 74, 62, 0.3);">
+                    <input onclick="changetype()" class="col-lg-2  m-3 p-1 " type="text" value="date of arival" min="2020-02-04" max="2100-12-31" required>
+                    <input onclick="changetype()" class="col-lg-2  m-3 p-1 " value="Date of departure" type="text" min="2020-02-04" max="2100-12-31">
+                    <input list="personne" class="col-lg-2  m-3 p-1 " type="number" value="personne" placeholder="number homes" required>
+
+                    <input value="chambre" class="col-lg-2  m-3 p-1 " type="number" placeholder="price" required>
+
+                    <input id="btn" class="col-lg-2  m-3 p-1 btn btn-block border rounded-pill p-2 px-3  " onclick="controleniputs()" value="RECHERCHE" style="background-color: dimgrey;">
+
+                </article>
+            </section>
+
+
+            <!--section 2 ************** ** * * *  ***** ** * ** * ss*s* **e-->
+
+
+            <section id="hero" class="container-fluid m-4">
+                <article class="row m-4 justify-content-center">
+                    <div class="col-lg-4" style="background-image: url('/assets/imgs/4.jpg');background-repeat: no-repeat;"> <i class="fa fa-play-circle " aria-hidden="true"></i> </div>
+                    <div class="col-lg-4 " style="background-image: url('/assets/imgs/5.jpg');background-repeat: no-repeat;"> <i class="fa fa-play-circle " aria-hidden="true"></i> </div>
+                    <div class="col-lg-3" style="background-image: url('/assets/imgs/7.jpg');background-repeat: no-repeat;background-size: cover;" ;> <i class="fa fa-play-circle " aria-hidden="true"></i> </div>
+                </article>
+
+            </section>
+            <section class="container-fluid m-4">
+                <article class="row m-4 justify-content-center">
+                    <div class="col-lg-4" style="background-image: url('/assets/imgs/8.jpg');background-repeat: no-repeat;"> <i class="fa fa-play-circle " aria-hidden="true"></i> </div>
+                    <div class="col-lg-4 " style="background-image: url('/assets/imgs/9.jpg');background-repeat: no-repeat;"> <i class="fa fa-play-circle " aria-hidden="true"></i> </div>
+                    <div class="col-lg-5 m-5" style="background-image: url('/assets/imgs/3.jpg');background-repeat: no-repeat;background-size: cover;height: 800px;;" ;> <i class="fa fa-play-circle " style="color: darkslategrey;" aria-hidden="true"></i> </div>
+                </article>
+                <div class="d-flex justify-content-center mt-5 mb-5">
+                    <button class="btn btn-primary py-3 px-4 text-uppercase font-weight-bolder rounded-pill">start project</button>
+                    <button class="btn  p-2 ml-3 font-weight-bold rounded-pill"> Schedule a call
+    <i class="fa fa-phone" aria-hidden="true"></i>
+</div>
+</section>
+
+            <section id="finals" class="finals">
+                <a href="https://www.facebook.com"> <i class="fab fa-facebook-square">facebook</i></a><br>
+                <i class="fas fa-envelope-square">Gmail</i><br>
+                <div class="row"> 
+                <img src="/assets/imgs/hamdi.jpg" alt="" style="width: 30px;height: 30px; border-radius: 50%;">
+                <img src="/assets/imgs/omar.jpg" alt="" style="width: 30px;height: 30px; border-radius: 50%;">
+</div>
+                <span> charradihamdi@gmail.com</span>
+                <span>glaaomar3@gmail.com</span>
+                <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102181.22038405633!2d10.077051551409332!3d36.8385688318089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcaa3fd7cac305d6c!2sThe%20VIP%20Dress!5e0!3m2!1sfr!2stn!4v1619041524151!5m2!1sfr!2stn">
+                    <i class="fas fa-map-marker-alt">localisation</i></a>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102181.22038405633!2d10.077051551409332!3d36.8385688318089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcaa3fd7cac305d6c!2sThe%20VIP%20Dress!5e0!3m2!1sfr!2stn!4v1619041524151!5m2!1sfr!2stn"
+                    width="1000" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </section></main>
+<main style="display: none;"> 
+  
+                    <section class="container">
+                        <article class="row">
+                            <legend class="col-1">id</legend>
+                            <legend class="col-3" style="padding-left: 40px;">adresse</legend>
+                            <legend class="col-2">phone </legend>
+                            <legend class="col-4" style="padding-left: 40px;">price</legend>
+                            <legend class="col-2"> rooms</legend>
+                         
+                    </article>
+                    <table id="list">
+                        <tr>
+
+                        </tr>
+                    </table>
+                    <button  class="btn btn-success" onclick="reser()">home</button>
+            </section>
+
+
+        </main>
+        </div>
+        <script>
+            var inp = document.querySelectorAll('input')
+            var section = document.querySelectorAll('section')
+            var main = document.querySelectorAll('main')
+            var body = document.querySelectorAll('body')
+            var table = document.querySelectorAll('table')
+            var article = document.querySelectorAll('article')
+            var header = document.querySelectorAll('header')
+            var legend = document.querySelectorAll('legend')
+            var d = new Date();
+
+            function changetype() {
+                inp[0].type = "date"
+                inp[1].type = "date"
+            }
+
+            function reser() {
+                main[0].style.display = ""
+                main[1].style.display = "none"
+                body[0].style = `
+             `
+                article[0].style = `
+        `
+            }
+        </script>
+        <script src="/assets/js/searchfrominput.js"></script>
+        <script src="/assets/js/jquery.js"></script>
+        <script src="./assets/BDconnection.js"></script>
+        <script src="./assets/fun.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+<!-- section 3-->
+<!--*************************************************************-->
+/
+<!--<section class=" mt-4" style="margin-bottom: 60px;">
+  <div class="row mt-4 ">
+    <div class="col-7 ">
+      <h3 class="title  py-2" style="margin-top:10%;padding-right:20%">Connect the dots</h3>
+      <p class="description py-2 " style="width: 70%;">
+        Explain your ideas in the blink of an eye.
+        Transform plain product demos into engaging experiences.
+        Generate buzz on social media like never before.
+      <br><br>For all of the above and everything in between – we’ve got you covered.
+      <br> <br>
+      <span> <u>Explainer Videos  </u> </span> </tr> <span> <u>Product Demos  </u> </span><span> <u>Marketing Videos  </u> </span>
+      
+    </p>
+     <p>Let’s start you off with a <span style="font-size: 22px;color:#0a9ac9;font-family:  Roboto, 'sans serif', 'Helvetica Neue', sans-serif; line-height: 50px;
+      ">free video script.</span> </p>
+       <button class="btn btn-primary py-3 px-4 text-uppercase font-weight-bolder rounded-pill">Schedule a call</button>
+                </div>
+                <div class="col-5">
+                    <video src="https://studiotale.com/wp-content/uploads/2019/12/Cube_Youtube_AE.mp4" style="width: 95%;"></video>
+                </div>
+            </section>
+            <section>
+
+            </section>
+            -->
